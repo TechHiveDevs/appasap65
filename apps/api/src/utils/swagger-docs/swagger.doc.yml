@@ -1,0 +1,328 @@
+
+  /recipes:
+    get:
+     summary: Get all recipess
+     tags: [recipes]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/recipes'
+ 
+    post:
+      summary: Create recipes
+      tags: [recipes]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/recipes'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recipes'
+ 
+  /recipes/{id}:
+    get:
+      summary: Get recipes by id
+      tags: [recipes]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recipes'
+ 
+    put:
+      summary: Edit recipes
+      tags: [recipes]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recipes'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/recipes'
+ 
+    delete:
+      summary: Delete recipes
+      tags: [recipes]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recipes'
+
+  /gym:
+    get:
+     summary: Get all gyms
+     tags: [gym]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/gym'
+ 
+    post:
+      summary: Create gym
+      tags: [gym]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gym'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gym'
+ 
+  /gym/{id}:
+    get:
+      summary: Get gym by id
+      tags: [gym]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gym'
+ 
+    put:
+      summary: Edit gym
+      tags: [gym]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gym'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/gym'
+ 
+    delete:
+      summary: Delete gym
+      tags: [gym]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gym'
+
+  /diet:
+    get:
+     summary: Get all diets
+     tags: [diet]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/diet'
+ 
+    post:
+      summary: Create diet
+      tags: [diet]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/diet'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/diet'
+ 
+  /diet/{id}:
+    get:
+      summary: Get diet by id
+      tags: [diet]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/diet'
+ 
+    put:
+      summary: Edit diet
+      tags: [diet]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/diet'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/diet'
+ 
+    delete:
+      summary: Delete diet
+      tags: [diet]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/diet'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      recipes:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          name:
+            type: string
+          ingredients:
+            type: string
+          diet:
+            type: string
+      gym:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          location:
+            type: string
+          user:
+            type: string
+      diet:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          startdate:
+            type: string
+          user:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
